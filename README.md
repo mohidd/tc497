@@ -19,7 +19,7 @@ This project is a full-stack web application that mimics core Instagram features
 - User profiles with personal feeds
 
 ## Architecture
-![Architecture diagram of the system showing React frontend, Flask API, and PostgreSQL database](docs/architecture_diagram_instagram_clone.png)
+![Architecture diagram of the system showing React frontend, Flask API, and PostgreSQL database](diagram.pdf)
 
 This diagram shows how the React frontend communicates with the Flask REST API using HTTPS and JSON. The backend handles authentication using server-side sessions and stores application data in a PostgreSQL database.
 
