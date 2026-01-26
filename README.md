@@ -19,7 +19,7 @@ This project is a full-stack web application that mimics core Instagram features
 - User profiles with personal feeds
 
 ## Architecture
-![Architecture diagram of the system showing React frontend, Flask API, and PostgreSQL database](diagram.pdf)
+![Architecture diagram of the system showing React frontend, Flask API, and PostgreSQL database](diagram.png)
 
 This diagram shows how the React frontend communicates with the Flask REST API using HTTPS and JSON. The backend handles authentication using server-side sessions and stores application data in a PostgreSQL database.
 
@@ -37,14 +37,13 @@ This diagram shows how the React frontend communicates with the Flask REST API u
 4. Install frontend dependencies  
 5. Start the backend and frontend servers  
 
-(docs/gifs/setup.gif)
 
 ## Usage
 
 ### Creating a post
 Users can upload a post and see it appear in their feed.
 
-![GIF showing a user creating a post](create_post.gif)
+![GIF showing a user creating a post](post.gif)
 
 ### Commenting on a post
 Users can leave comments on posts.
