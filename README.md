@@ -1,7 +1,5 @@
 # Instagram Clone
 
-(docs/banner.png)
-
 ## Overview
 This project is a full-stack web application that mimics core Instagram features. Users can create posts, comment on posts, and manage personalized profiles. The app is built with a React frontend, a Flask REST API backend, session-based authentication, and a PostgreSQL database.
 
@@ -46,12 +44,12 @@ This diagram shows how the React frontend communicates with the Flask REST API u
 ### Creating a post
 Users can upload a post and see it appear in their feed.
 
-(docs/gifs/create_post.gif)
+![GIF showing a user creating a post](create_post.gif)
 
 ### Commenting on a post
 Users can leave comments on posts.
 
-(docs/gifs/comment.gif)
+![GIF showing a user commenting on a post](comment.gif)
 
 ## FAQ
 **How does authentication work?**  
