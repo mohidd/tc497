@@ -22,12 +22,14 @@
 
 ## Architecture
 ### System Overview
-![High-level Architecture Diagram](architecture.png)
+![Architecture diagram showing React components communicating with Flask REST API via JSON/HTTPS](architecture.png)
 *This diagram demonstrates the decoupled architecture where the React client makes asynchronous AJAX calls to the Flask REST API using the Fetch API.*
 
 ### Data Flow Detail
-![Low-level REST API and Database Diagram](diagram.png)
+![Diagram of REST API endpoints interacting with SQLite3 database tables](diagram.png)
 *A deep dive into how the backend orchestrates data between the SQLite3 database and the client, specifically handling JSON responses for posts, comments, and likes.*
+
+
 
 ## Quickstart
 
