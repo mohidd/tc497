@@ -1,64 +1,83 @@
-# Instagram Clone
+# InstaDynamic
+
+![InstaDynamic Project Banner](banner.png)
 
 ## Overview
-This project is a full-stack web application that mimics core Instagram features. Users can create posts, comment on posts, and manage personalized profiles. The app is built with a React frontend, a Flask REST API backend, session-based authentication, and a PostgreSQL database.
+**InstaDynamic** is a full-stack web application that delivers a high-fidelity Instagram experience using client-side dynamic rendering. By refactoring a traditional server-side architecture into a modern **React frontend** and a **Flask REST API**, this project supports advanced features like infinite scroll and real-time interaction without page reloads.
 
 ## Table of Contents
-- Overview
-- Features
-- Architecture
-- Quickstart
-- Usage
-- FAQ
-- Tech Stack
+- [Overview](#overview)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Quickstart](#quickstart)
+- [Usage](#usage)
+- [FAQ](#faq)
+- [Tech Stack](#tech-stack)
 
 ## Features
-- User authentication with sessions
-- Create and view posts
-- Comment on posts
-- User profiles with personal feeds
+- **Robust Authentication:** Secure access via session-based logins and HTTP Basic Auth.
+- **Dynamic Feed:** Infinite scroll functionality that loads 10 posts at a time as the user reaches the footer.
+- **Instant Engagement:** Immediate UI updates for likes and comments without page refreshes.
+- **Advanced UI Elements:** Double-click to like and human-readable timestamps that update every minute.
 
 ## Architecture
-![Architecture diagram of the system showing React frontend, Flask API, and PostgreSQL database](diagram.png)
+### System Overview
+![High-level Architecture Diagram](diagram1.png)
+*This diagram demonstrates the decoupled architecture where the React client makes asynchronous AJAX calls to the Flask REST API using the Fetch API.*
 
-This diagram shows how the React frontend communicates with the Flask REST API using HTTPS and JSON. The backend handles authentication using server-side sessions and stores application data in a PostgreSQL database.
+### Data Flow Detail
+![Low-level REST API and Database Diagram](diagram2.png)
+*A deep dive into how the backend orchestrates data between the SQLite3 database and the client, specifically handling JSON responses for posts, comments, and likes.*
 
 ## Quickstart
 
 ### Prerequisites
-- Node.js
-- Python 3
-- PostgreSQL
+- **Node.js**: For managing frontend dependencies and the Webpack build tool.
+- **Python 3**: To run the Flask development server.
+- **SQLite3**: For local data storage.
 
 ### Installation
-1. Clone the repository  
-2. Install backend dependencies  
-3. Set up the PostgreSQL database  
-4. Install frontend dependencies  
-5. Start the backend and frontend servers  
-
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repo-url>
+   cd p3-insta485-clientside
+   ```
+2. **Install backend dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Install frontend dependencies**:
+   ```bash
+   npm ci
+   ```
+4. **Set up the database**:
+   ```bash
+   ./bin/insta485db reset
+   ```
+5. **Start the development servers**:
+   ```bash
+   ./bin/insta485run
+   ```
 
 ## Usage
 
-### Creating a post
-Users can upload a post and see it appear in their feed.
-
+### Creating a Post
+Users can seamlessly upload photos to the platform. 
 ![GIF showing a user creating a post](post.gif)
 
-### Commenting on a post
-Users can leave comments on posts.
-
-![GIF showing a user commenting on a post](comment.gif)
+### Dynamic Interaction
+Liking and commenting occur instantly. For instance, double-clicking an image or pressing "Enter" on a comment updates the UI immediately.
+![GIF showing real-time likes and comments](interaction.gif)
 
 ## FAQ
-**How does authentication work?**  
-Authentication is handled using server-side sessions managed by the Flask backend.
+**How does authentication work?** InstaDynamic supports both server-side session cookies and HTTP Basic Access Authentication, which encodes credentials in the request headers.
 
-**Do I need a local database to run this?**  
-Yes, PostgreSQL is required to store users, posts, and comments.
+**Does this project require a heavy database setup?** No, it uses **SQLite3**, a lightweight, file-based database that requires no separate server process.
+
+**What happens if the API is slow?** The React frontend is designed with conditional rendering to show "Loading" states, ensuring the app remains stable while waiting for data.
 
 ## Tech Stack
-- Frontend: React, HTML, CSS, JavaScript  
-- Backend: Flask, Python  
-- Database: PostgreSQL  
-- Authentication: Sessions
+- **Frontend**: React (Hooks/State), JavaScript (ES6), HTML5, CSS3.
+- **Backend**: Flask, Python.
+- **Database**: SQLite3.
+- **Tools**: Webpack, ESLint, Cypress (E2E Testing).
